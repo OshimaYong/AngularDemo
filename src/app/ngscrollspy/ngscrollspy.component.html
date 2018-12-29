@@ -1,0 +1,41 @@
+<h1>当前位置 : [{{currentPostion}}]</h1>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+        <h2>导航</h2>
+        <div (click)="scrollTo('phase1')">段落1
+          <ng-container *ngIf="currentPostion==='phase1'">++</ng-container>
+        </div>
+        <div (click)="scrollTo('phase2')">段落2
+          <ng-container *ngIf="currentPostion==='phase2'">++</ng-container>
+        </div>
+        <div (click)="scrollTo('phase3')">段落3
+          <ng-container *ngIf="currentPostion==='phase3'">++</ng-container>
+        </div>
+        <div (click)="scrollTo('phase4')">段落4
+          <ng-container *ngIf="currentPostion==='phase4'">++</ng-container>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+        <div id="phases" NgScrollSpy (positonChange)="onPositionChange($event)" style="height:150px;overflow-y: scroll;">
+          <div id="phase1">
+            <h2 style="margin:0">段落 1</h2>
+            <PhaseText></PhaseText>
+          </div>
+          <div id="phase2">
+            <h1>段落 2</h1>
+            <PhaseText></PhaseText>
+          </div>
+          <div id="phase3">
+            <h1>段落 3</h1>
+            <PhaseText></PhaseText>
+          </div>
+          <div id="phase4">
+            <h1>段落 4</h1>
+            <PhaseText></PhaseText>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
